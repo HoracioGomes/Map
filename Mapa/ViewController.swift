@@ -8,32 +8,38 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var map: MKMapView!
+    var gerenciadorLocal = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let latitude: CLLocationDegrees = -22.895384
-        let longitude: CLLocationDegrees = -42.225164
-        let latitudeDelta: CLLocationDegrees = 0.009
-        let longitudeDelta: CLLocationDegrees = 0.009
-        
-        let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        let zoom: MKCoordinateSpan = MKCoordinateSpan.init(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
-        let regiao : MKCoordinateRegion = MKCoordinateRegion.init(center: location, span: zoom)
-        
-        map.setRegion(regiao, animated: true)
-        
-        let anotacao: MKPointAnnotation = MKPointAnnotation()
-        anotacao.coordinate = location
-        anotacao.title = "Abrigo"
-        anotacao.subtitle = "Perto do lago"
-        
-        map.addAnnotation(anotacao)
-        
+        gerenciadorLocal.delegate = self
+        gerenciadorLocal.desiredAccuracy = kCLLocationAccuracyBest
+        gerenciadorLocal.requestWhenInUseAuthorization()
+        gerenciadorLocal.startUpdatingLocation()
+//
+//        let latitude: CLLocationDegrees = -22.895384
+//        let longitude: CLLocationDegrees = -42.225164
+//        let latitudeDelta: CLLocationDegrees = 0.009
+//        let longitudeDelta: CLLocationDegrees = 0.009
+//
+//        let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+//        let zoom: MKCoordinateSpan = MKCoordinateSpan.init(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
+//        let regiao : MKCoordinateRegion = MKCoordinateRegion.init(center: location, span: zoom)
+//
+//        map.setRegion(regiao, animated: true)
+//
+//        let anotacao: MKPointAnnotation = MKPointAnnotation()
+//        anotacao.coordinate = location
+//        anotacao.title = "Abrigo"
+//        anotacao.subtitle = "Perto do lago"
+//
+//        map.addAnnotation(anotacao)
+//
     }
 
+    
 
 }
 

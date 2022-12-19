@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96323C9C2950F7EA007B9751 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96323C9B2950F7E9007B9751 /* CoreLocation.framework */; };
 		96FD248C292B87E300CCDD96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD248B292B87E300CCDD96 /* AppDelegate.swift */; };
 		96FD248E292B87E400CCDD96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD248D292B87E400CCDD96 /* SceneDelegate.swift */; };
 		96FD2490292B87E400CCDD96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD248F292B87E400CCDD96 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96323C9B2950F7E9007B9751 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		96FD2488292B87E300CCDD96 /* Mapa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96FD248B292B87E300CCDD96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96FD248D292B87E400CCDD96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96323C9C2950F7EA007B9751 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96323C9A2950F7E9007B9751 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96323C9B2950F7E9007B9751 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		96FD247F292B87E300CCDD96 = {
 			isa = PBXGroup;
 			children = (
 				96FD248A292B87E300CCDD96 /* Mapa */,
 				96FD2489292B87E300CCDD96 /* Products */,
+				96323C9A2950F7E9007B9751 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
