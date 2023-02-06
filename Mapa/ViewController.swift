@@ -39,7 +39,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //
     }
 
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let currentLocation: CLLocation = locations.last!
+        let latitude: CLLocationDegrees = currentLocation.coordinate.latitude
+        let longitude: CLLocationDegrees = currentLocation.coordinate.longitude
+        let latitudeDelta: CLLocationDegrees = 0.009
+        let longitudeDelta: CLLocationDegrees = 0.009
+        
+        let updatedLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        let zoom: MKCoordinateSpan = MKCoordinateSpan.init(latitudeDelta: latitudeDelta, longitudeDelta: longitudeDelta)
+        let regiao: MKCoordinateRegion = MKCoordinateRegion.init(center: updatedLocation, span: zoom)
+        
+        map.setRegion(regiao, animated: true)
+    }
 
 }
 
